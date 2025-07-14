@@ -1,0 +1,11 @@
+#ignore object and external files
+*.o
+*.exe
+
+# Others
+*.obj
+*.object
+*.out
+*.log
+*.tmp
+*.bin
