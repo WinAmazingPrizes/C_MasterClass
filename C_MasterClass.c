@@ -4,8 +4,8 @@
 #include <limits.h>// - Hardware Specs Document
 #include <float.h>
 #include <math.h>// - pg92 Includes Sqrt(), abs(), fabs(), pow() etc.
-//#include "def.h"
-// ! Local Files USE "def.h" NOT <def.h>
+#include "def.h"// ! Local Files USE "def.h" NOT <def.h>
+
 #define TAXRATE 0.15
 // ! No Semicolons TAXRATE 0.15; will LITEALLY Replace TAXRATE with (0.15;) NOT (0.15)
 // The above is the 3rd way of defining constants. C page 57
@@ -279,7 +279,7 @@ void arraysAndPointers()
     //TODO - P O I N T E R S  &  ARRAYS C - page 187
     //* The Array Name is a POINTER CONSTANT
     int days[12]; //? days is pointing to first element in array days[0]
-    printf("The value of the Pointer Constant days is : %p", days);
+    printf("The value of the Pointer Constant days is : %p   \n", days);
 
     //EXAMPLE , CONSTANTS CANNOT CHANGE VALUE THROUGHOUT COMPUTATION
     int five = 5;
@@ -361,14 +361,21 @@ int main(void)
 
     arrayExamples(); // C - page 181 Chapter 9 Arrays
     arraysAndPointers(); // C - page 187 Chapter 9.5
-    int table[10]={0,1,2,3,4,5,6,7,8,9};
-    int n = 10;
-    maximum1(table,n);
-    maximm2(table);
-    maximum3(table,n);
-    //! Arrays DECOMPOSE to Pointers in C. 
-    BubbleSort(); // C - Page 193 Chapter 9.6 Sorting Arrays
 
+    int table[10]={0,11,2,3,45,5,6,76,8,9};
+    int n = 10;
+    int* const p = table;
+    maximum1(table,n);
+    maximum2(table);
+    maximum3(table,n);
+    //! Arrays DECOMPOSE to Pointers in C. - Does Not Matter, how you #define functions, calling is the same
+
+    //bubbleSort(); // C - Page 193 Chapter 9.6 Sorting Arrays
+    //* ^ These FUNCTION(s) are in support.c 
+    BubbleSort(n,p);
+
+    searchingArrays(); //C - Page 197 Chapter 9.7 Searching Arrays
+    //* ^ These FUNCTION(s) are in support.c
 
     return 0;
 }
