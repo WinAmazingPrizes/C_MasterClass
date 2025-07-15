@@ -21,3 +21,10 @@ void Supportfunction2(int*, float*);
 */
 void bubblesearch();
 void BubbleSearch(int n, int*p);
+
+void linearSearch();
+int LinearSearch(int arr[], int n, int key);
+int BinarySearch();
+
+void MultiDimArrays();// C - pg201 9.8
+void MultiDimArraysAndPointers();

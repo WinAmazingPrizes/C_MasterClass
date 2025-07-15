@@ -221,6 +221,10 @@ void arrayExamples()
     //? <<TYPE>><<ARRAY_NAME>> <[>SIXE<]> = <{> X , X1 , X2 <}>;
     //* int favPrimes[3] = {2,3,5}; 0s will fill UN-Initialized Spots
 
+    int a,b,c,d,e;
+    int* intpointerArr[5] = {&a,&b,&c,&d,&e};
+    int intArray[5] = {a,b,c,d,e};
+
     int* ArrayOfIntPointers[5];//! SPECIAL CASE : Array Of Pointers
     for(int i=0; i<5; i++)
     {
@@ -230,7 +234,7 @@ void arrayExamples()
         // This ^ is making each slot hold a reference to 8 BYTES
         ArrayOfIntPointers[i] = malloc(sizeof(int));
         // This ^ is making each slot hold a reference to 4 BYTES
-        //! ^ ^ ^ You Must Initialize Array of Pointers !!!
+        //! ^ ^ ^ You Must Initialize Pointers in Array of Pointers !!!
         //* malloc() does not get rid of shit that was there
         //* calloc() does initialize shit in blocks to 0
         //! Do this or else NO PRINTING & UNDEFINED BEHAVIOUR
@@ -359,7 +363,7 @@ int main(void)
     //TODO gcc << MainFile.c >> << OtherFile(s).c >> << -o >> << FinalExecutable.exe >>
     //TODO ./C_MasterClass.exe OR C_MasterClass.exe
 
-    arrayExamples(); // C - page 181 Chapter 9 Arrays
+    //arrayExamples(); // C - page 181 Chapter 9 Arrays
     arraysAndPointers(); // C - page 187 Chapter 9.5
 
     int table[10]={0,11,2,3,45,5,6,76,8,9};
@@ -372,9 +376,13 @@ int main(void)
 
     //bubbleSort(); // C - Page 193 Chapter 9.6 Sorting Arrays
     //* ^ These FUNCTION(s) are in support.c 
-    BubbleSort(n,p);
+    //BubbleSort(n,p);
 
-    searchingArrays(); //C - Page 197 Chapter 9.7 Searching Arrays
+    //searchingArrays(); //C - Page 197 Chapter 9.7 Searching Arrays
+    //* ^ These FUNCTION(s) are in support.c
+
+    //MultiDimArrays(); //C - Page 201 Chapter 9.8
+    MultiDimArraysAndPointers(); //C page 206 Chapter 9.9
     //* ^ These FUNCTION(s) are in support.c
 
     return 0;
